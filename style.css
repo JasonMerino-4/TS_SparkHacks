@@ -19,7 +19,6 @@ main{
 .all_criteria{
     display: flexc;
     align-items: center;
-    border: 1px solid red;
 }
 
 
@@ -45,7 +44,6 @@ main{
 .button_wrapper{
     display: flex;
     align-items: center;
-    border: 1px solid blue;
 }
 
 #eat_button{
@@ -53,4 +51,5 @@ main{
     width: 128px;
     border-radius: 32px;
     margin: 10px auto;
+    background-color: white;
 }
