@@ -105,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function(){
     eat.addEventListener("click", function () {
         matchingZone.style.display = "flex"; // Show the matching zone
         matchingZone.scrollIntoView({ behavior: "smooth" });
+        calculateScore();
+        updateMaxIndices();
         updateBusinessProfile(); // Load first business
     });
 
@@ -136,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function(){
     maxIndices = [];
     function updateMaxIndices() {
         // Fill maxIndices with indices of businesses
-        maxIndices = [...businesses.keys()];
+        maxIndices = businesses.map((_, index) => index);
     
         // Sort indices based on the 'score' property in descending order
         maxIndices.sort((a, b) => businesses[b].score - businesses[a].score);
@@ -145,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // Function to update the business profile
     function updateBusinessProfile() {
-        const business = businesses[currentIndex];
+        const business = businesses[maxIndices[currentIndex]];
 
         document.querySelector(".business_name").innerHTML = `<u>${business.name}</u>`;
         document.querySelector(".business_pictures").src = business.image;
@@ -153,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function(){
         // Update the business criteria details
         const profileFields = document.querySelectorAll(".business_criteria .profile_field");
         profileFields[0].textContent = `Budget: ${business.budget}`;
-        profileFields[1].textContent = `Number: ${business.number}`;
+        profileFields[1].textContent = `Number: ${maxIndices[currentIndex]}`;
         profileFields[2].textContent = `Craving: ${business.craving}`;
 
         // Update navigation details
@@ -170,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function(){
         profile.classList.remove("reject_transition")
         profile.classList.remove("accept_transition")
         profile.offsetWidth;
-        currentIndex = (currentIndex + 1) % businesses.length; // Loop through businesses
+        currentIndex = (maxIndices + 1) % maxIndices.length; // Loop through businesses
         updateBusinessProfile();
         profile.classList.add("reject_transition")
         console.log(profile.classList);
