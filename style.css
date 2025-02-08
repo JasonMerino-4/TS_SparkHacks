@@ -60,7 +60,7 @@ a{
 }
 
 .matching_zone{
-    display: flex;
+    display: none;
     justify-content: center;
     background-color: tan;
     width: 100vw;
