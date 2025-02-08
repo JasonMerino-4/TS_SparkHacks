@@ -28,15 +28,61 @@ document.addEventListener('DOMContentLoaded', function(){
             delivery: "https://www.grubhub.com/restaurant/joy-yee-noodle-1335-s-halsted-st-chicago/29343",
             site: "https://joyyee.com/"
         },
+
+        
         {
             name: "Busy Burger",
             image: "./joy_yee.jpg",
             budget: "$$",
-            number: "(312) 997-2128",
+            number: "(312) 226-7760",
             craving: "Burger",
-            address: "1335 S Halsted St, Chicago, IL 60607",
-            delivery: "https://www.grubhub.com/restaurant/joy-yee-noodle-1335-s-halsted-st-chicago/29343",
-            site: "https://joyyee.com/"
+            address: "1120 W Taylor St, Chicago, IL 60607",
+            delivery: "https://www.grubhub.com/restaurant/busy-burger-1120-w-taylor-st-chicago/2451283",
+            site: "https://www.busyburger.com/"
+        },
+
+        {
+            name: "Billy Goat Tavern",
+            image: "./joy_yee.jpg",
+            budget: "$$",
+            number: "(312) 733-9132",
+            craving: "Burger",
+            address: "1120 W Taylor St, Chicago, IL 60607",
+            delivery: "https://www.grubhub.com/restaurant/billy-goat-tavern-1535-w-madison-st-chicago/323027",
+            site: "https://www.billygoattavern.com/?srsltid=AfmBOoqN_dsABx0FIBIiTS0Ez8OSuDH8NtljW47SJs3avoacHAKCAVWV"
+        },
+
+        {
+            name: "Al's #1 Italian Beef",
+            image: "./joy_yee.jpg",
+            budget: "$$",
+            number: "(312) 226-4017",
+            craving: "Italian Beef",
+            address: "1079 W Taylor St, Chicago, IL 60607",
+            delivery: "https://www.grubhub.com/restaurant/the-original-als-beef---taylor-st-1079-w-taylor-st-chicago/334610?utm_source=google&utm_medium=organic&utm_campaign=place-action-link&pickup=true&rwg_token=AAiGsoaSc6_1baKQFcR7jfUDT2VGXbfKsmtW5t_RkEuaDzghHWLf59HRj_aXgQIxDpE501-pCNj86AP-7GJSTHDYEYtJ2kFpRw%3D%3D",
+            site: "https://www.alsbeef.com/"
+        },
+
+        {
+            name: "Thai Bowl",
+            image: "./joy_yee.jpg",
+            budget: "$$",
+            number: "(312) 226-9129",
+            craving: "Thai",
+            address: "1049 W Taylor St, Chicago, IL 60607",
+            delivery: "N/A",
+            site: "http://thaibowltaylor.com/"
+        },
+
+        {
+            name: "Strings Ramen Shop",
+            image: "./joy_yee.jpg",
+            budget: "$$$",
+            number: "(312) 374-3450",
+            craving: "Ramen",
+            address: "2141 S Archer Ave, Chicago, IL 60616",
+            delivery: "N/A",
+            site: "https://www.stringsramen.com/"
         }
 
 
