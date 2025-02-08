@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
             image: "./joy_yee.jpg",
             budget: "$$",
             number: "(312) 226-7760",
-            craving: "Burger",
+            craving: "Hot Dog",
             address: "1120 W Taylor St, Chicago, IL 60607",
             delivery: "https://www.grubhub.com/restaurant/busy-burger-1120-w-taylor-st-chicago/2451283",
             site: "https://www.busyburger.com/"
