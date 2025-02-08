@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
             budget: "$$",
             number: "(312) 733-9132",
             craving: "Burger",
-            address: "1120 W Taylor St, Chicago, IL 60607",
+            address: "1535 W Madison St, Chicago, IL 60607",
             delivery: "https://www.grubhub.com/restaurant/billy-goat-tavern-1535-w-madison-st-chicago/323027",
             site: "https://www.billygoattavern.com/?srsltid=AfmBOoqN_dsABx0FIBIiTS0Ez8OSuDH8NtljW47SJs3avoacHAKCAVWV"
         },
