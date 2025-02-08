@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.craving_title{
+    font-size: 96px;
+    background-color: tan;
+    color: ivory;
+    padding: 64px;
+    border-radius: 50%;
+}
+
+.all_criteria{
+    display: flexc;
+    align-items: center;
+    border: 1px solid red;
+}
+
+
+.craving_criteria_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 64px;;
+}
+
+.craving_criteria_label{
+    font-size: 40px;
+}
+
+.craving_criteria{
+    border-radius: 48px;
+    height: 96px;
+    width: 512px;
+    font-size: 32px;
+    text-align: center;
+}
+
+.button_wrapper{
+    display: flex;
+    align-items: center;
+    border: 1px solid blue;
+}
+
+#eat_button{
+    height: 64px;
+    width: 128px;
+    border-radius: 32px;
+    margin: 10px auto;
+}
