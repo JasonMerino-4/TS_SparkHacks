@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // Modifies each business's score according to the user's preferences 
     function calculateScore() {       
-        for (let i = 0; i < businesses.length(); i ++) {
+        for (let i = 0; i < businesses.length; i ++) {
             
             // Check if the business matches the user's craving
             if (businesses[i].craving == craving) {
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }
 
             // Check if the business price level falls under or equal the budget
-            if (businesses[i].budget == budget.length() || businesses[i].budget == budget.length()) {
+            if (businesses[i].budget == budget.length || businesses[i].budget == budget.length) {
                 businesses[i].score += 2;
             }
             else {
@@ -133,14 +133,19 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     // Builds the list of indexes in order of descending score
-    function buildMaxIndexes() {
-        const maxIndices = [...businesses.keys()];
-        maxIndices.sort((a,b) => businesses[b].score - businesses[a].score);
+    maxIndices = [];
+    function updateMaxIndices() {
+        // Fill maxIndices with indices of businesses
+        maxIndices = [...businesses.keys()];
+    
+        // Sort indices based on the 'score' property in descending order
+        maxIndices.sort((a, b) => businesses[b].score - businesses[a].score);
     }
+    
 
     // Function to update the business profile
     function updateBusinessProfile() {
-        const business = businesses[maxIndices[currentIndex]];
+        const business = businesses[currentIndex];
 
         document.querySelector(".business_name").innerHTML = `<u>${business.name}</u>`;
         document.querySelector(".business_pictures").src = business.image;
@@ -158,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function(){
         navigationFields[2].innerHTML = `<a href="${business.site}" target="_blank">Website</a>`;
     }
     
-    let currentIndex = maxIndices[0]; // Track which business is being shown
+    let currentIndex = 0; // Track which business is being shown
 
     // When the checkmark (V) button is pressed, load the next business
     rejectButton.addEventListener("click", function () {
