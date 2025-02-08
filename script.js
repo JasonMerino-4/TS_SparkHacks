@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', function(){
     const distance = document.getElementById("distance_radius");
     const eat      = document.getElementById("eat_button");
     const matchingZone = document.querySelector(".matching_zone");
+    const profile = document.querySelector(".business_profile_container");
     const rejectButton = document.querySelector(".reject");
+    const acceptButton = document.querySelector(".accept");
 
     const businesses = [
         {
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     ]
+    
     let currentIndex = 0; // Track which business is being shown
 
     // Show the Matching Zone when "EAT!" button is pressed
@@ -72,13 +75,25 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // When the checkmark (V) button is pressed, load the next business
     rejectButton.addEventListener("click", function () {
+        profile.classList.remove("reject_transition")
+        profile.classList.remove("accept_transition")
+        profile.offsetWidth;
         currentIndex = (currentIndex + 1) % businesses.length; // Loop through businesses
         updateBusinessProfile();
+        profile.classList.add("reject_transition")
+        console.log(profile.classList);
+    });
+
+    acceptButton.addEventListener("click", function () {
+        profile.classList.remove("accept_transition")
+        profile.classList.remove("reject_transition")
+        profile.offsetWidth;
+        profile.classList.add("accept_transition")
     });
 
     eat.addEventListener("click", function () {
         matchingZone.style.display = "flex"; // Show the matching zone
-        matchingZone.scrollIntoView({ behavior: "smooth" });
+        profile.scrollIntoView({ behavior: "smooth" });
     });
     
 });
