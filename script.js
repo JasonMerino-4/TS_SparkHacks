@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         {
             name: "Joy Yee",
-            image: "./joy_yee.jpg",
+            image: "./joy_yee.jpeg",
             budget: "$$",
             number: "(312) 997-2128",
             craving: "Sit-Down",
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         {
             name: "Busy Burger",
-            image: "./joy_yee.jpg",
+            image: "./busy_burger.jpg",
             budget: "$$",
             number: "(312) 226-7760",
             craving: "Burger",
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         {
             name: "Billy Goat Tavern",
-            image: "./joy_yee.jpg",
+            image: "./billy_goat.jpg",
             budget: "$$",
             number: "(312) 733-9132",
             craving: "Burger",
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         {
             name: "Al's #1 Italian Beef",
-            image: "./joy_yee.jpg",
+            image: "./al's_beef.jpg",
             budget: "$$",
             number: "(312) 226-4017",
             craving: "Italian Beef",
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         {
             name: "Thai Bowl",
-            image: "./joy_yee.jpg",
+            image: "./thai_bowl.jpg",
             budget: "$$",
             number: "(312) 226-9129",
             craving: "Thai",
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         {
             name: "Strings Ramen Shop",
-            image: "./joy_yee.jpg",
+            image: "./strings_ramen.jpg",
             budget: "$$$",
             number: "(312) 374-3450",
             craving: "Ramen",
