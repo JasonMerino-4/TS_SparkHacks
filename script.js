@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function(){
     const rejectButton = document.querySelector(".reject");
     const acceptButton = document.querySelector(".accept");
 
+    class Score {
+        constructor(index, scoreInput) {
+            this.index = index;
+            this.scoreInput = scoreInput;
+        }
+    }
     const businesses = [
         {
             name: "Gathers Tea Bar",
@@ -106,11 +112,26 @@ document.addEventListener('DOMContentLoaded', function(){
         matchingZone.style.display = "flex"; // Show the matching zone
         matchingZone.scrollIntoView({ behavior: "smooth" });
         calculateScore();
+        scoreList.sort(    function compareScore(b1, b2) {
+            if (b1.score > b2.score) {
+                return 1;
+            }
+            else if (b1.score == b2.score) {
+                return 0;
+            }
+            else {
+                return -1;
+            }
+        });
+        console.log(scoreList);
         updateMaxIndices();
+        console.log(maxIndices);
         updateBusinessProfile(); // Load first business
     });
 
-    
+      // Builds the list of indexes in order of descending score
+    maxIndices = [];
+    scoreList = [];  
 
     // Modifies each business's score according to the user's preferences 
     function calculateScore() {       
@@ -125,29 +146,32 @@ document.addEventListener('DOMContentLoaded', function(){
             }
 
             // Check if the business price level falls under or equal the budget
-            if (businesses[i].budget == budget.length || businesses[i].budget == budget.length) {
+            
+            if (businesses[i].budget.length == budget.length|| businesses[i].budget.length == budget.length) {
                 businesses[i].score += 2;
             }
             else {
                 businesses[i].score += 1;
-            }     
+            }
+            const score_object = new Score(i, businesses[i].score);
+            scoreList.push(score_object);
         }
     }
 
-    // Builds the list of indexes in order of descending score
-    maxIndices = [];
+
+
     function updateMaxIndices() {
-        // Fill maxIndices with indices of businesses
-        maxIndices = businesses.map((_, index) => index);
-    
-        // Sort indices based on the 'score' property in descending order
-        maxIndices.sort((a, b) => businesses[b].score - businesses[a].score);
+        while(scoreList.length){
+            maxIndices.push(scoreList.pop().index);
+        }
+
     }
     
 
     // Function to update the business profile
     function updateBusinessProfile() {
         const business = businesses[maxIndices[currentIndex]];
+        console.log(maxIndices[currentIndex]);
 
         document.querySelector(".business_name").innerHTML = `<u>${business.name}</u>`;
         document.querySelector(".business_pictures").src = business.image;
@@ -155,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function(){
         // Update the business criteria details
         const profileFields = document.querySelectorAll(".business_criteria .profile_field");
         profileFields[0].textContent = `Budget: ${business.budget}`;
-        profileFields[1].textContent = `Number: ${maxIndices[currentIndex]}`;
+        profileFields[1].textContent = `Number: ${business.number}`;
         profileFields[2].textContent = `Craving: ${business.craving}`;
 
         // Update navigation details
@@ -172,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function(){
         profile.classList.remove("reject_transition")
         profile.classList.remove("accept_transition")
         profile.offsetWidth;
-        currentIndex = (maxIndices + 1) % maxIndices.length; // Loop through businesses
+        currentIndex = (currentIndex + 1) % currentIndex.length; // Loop through businesses
         updateBusinessProfile();
         profile.classList.add("reject_transition")
         console.log(profile.classList);
